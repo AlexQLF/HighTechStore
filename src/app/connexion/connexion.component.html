@@ -1,0 +1,40 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <br/>
+      <img width=150px src="assets/icon.png" id="icon" alt="User Icon" />
+      <br/>
+    </div>
+    <br/>
+
+    <!-- Login Form -->
+    <form #connexionForm="ngForm" (ngSubmit)="Connexion(connexionForm)">
+      <input type="email" id="email" class="fadeIn second" name="email" placeholder="email" #email="ngModel" ngModel email required>
+      <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched" role="alert">
+          Email required !
+      </div>
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" #pass="ngModel" ngModel required minlength="8">
+      <div class="alert alert-danger" *ngIf="messageError" role="alert">
+          {{messageError}}
+      </div>
+      <div class="alert alert-danger" *ngIf="pass.errors?.minlength && pass.touched" role="alert">
+          minlength required is 8 character !
+      </div>
+      <input type="submit" class="fadeIn fourth" [disabled]="connexionForm.invalid" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

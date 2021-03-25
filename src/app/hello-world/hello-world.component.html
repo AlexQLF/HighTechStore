@@ -1,0 +1,61 @@
+<p>Test Achat en ligne</p>
+
+<h2>Interpolation</h2>
+<p>Le nom de l'article est : {{nom_Article}}</p>
+<p>Le prix de l'article est : {{prix_Article}}</p>
+<p>La couleur de l'article est : {{couleur_Article}}</p>
+<br/>
+<h2>PropertyBinding</h2>
+<p>Le nom de l'article est : <span [innerHTML]="nom_Article"></span></p>
+<p>Le prix de l'article est : <span [innerHTML]="prix_Article"></span></p>
+<p>La couleur de l'article est : <span [innerHTML]="couleur_Article"></span></p>
+<br/>
+<h2>Event Binding</h2>
+
+<p>{{message}}</p>
+
+<button [disabled]="confirmation"
+        on-click="OnAchatArticle()"
+        class="btn btn-info"> Achat Article</button>
+
+<br/>
+
+<h2>$event</h2>
+
+<h5>Veuillez saisir la catégorie des articles souhaitée:</h5>
+<input type="text"
+        class="form-control"
+        (input)="OnChoixCategorie($event)" />
+vous avez tapez: {{NomCategorie}}
+
+<br/>
+
+<h2> Binding Bidirectionnel [(ngModel)]</h2>
+
+<p>Cet input utilise ngModel:
+
+        <input class="form-control" type="text" [(ngModel)]="nombreArticles" />
+
+</p>
+
+<br/>
+
+<div [class.my-class-couleur]="isColorChanged">
+    Changer la couleur
+    en cliquant sur le bouton.
+</div>
+<button class="btn btn-warning"
+        (click)="isColorChanged = !isColorChanged;">
+    Modifier la couleur</button>
+
+<br/>
+
+<p [style.font-size.em]="isFontChanged ? 2 : 1">
+    Changez le font
+</p>
+<button class="btn btn-danger"
+    (click)="isFontChanged = !isFontChanged;">
+    Modifier le style du font</button>
+
+
+
