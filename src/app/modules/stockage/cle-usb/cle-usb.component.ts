@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticlesService } from 'src/app/services/articles.service';
 
 @Component({
   selector: 'app-cle-usb',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CleUsbComponent implements OnInit {
 
-  constructor() { }
+  list: any;
+
+  constructor(private articleService: ArticlesService) { }
 
   ngOnInit(): void {
+    this.articleService.getAll("/cle-usb/articles/").subscribe(result => { 
+      this.list = result;
+    });
   }
-
 }

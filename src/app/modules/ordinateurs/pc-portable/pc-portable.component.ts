@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdinateursService } from '../services/ordinateurs.service';
+import { ArticlesService } from '../../../services/articles.service';
 
 @Component({
   selector: 'app-pc-portable',
@@ -10,10 +10,10 @@ export class PcPortableComponent implements OnInit {
 
   list: any;
 
-  constructor(private ordiService: OrdinateursService) { }
+  constructor(private articleService: ArticlesService) { }
 
   ngOnInit(): void {
-    this.ordiService.getAll().subscribe(result => { 
+    this.articleService.getAll("/pc-portable/articles").subscribe(result => { 
       this.list = result;
     });
   }
