@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Article } from 'src/app/interface/Article';
 import { ArticlesService } from 'src/app/services/articles.service';
 
 @Component({
@@ -9,27 +11,19 @@ import { ArticlesService } from 'src/app/services/articles.service';
 })
 export class ArticleComponent implements OnInit {
 
-  //constructor(private articleService: ArticlesService, private id: number) { }
-
-  list: any;
-  //idArticle: number;
-
-  /*ngOnInit(): void {
-    this.articleService.getArticle("{{id}}").subscribe(result => { 
-      this.list = result;
-    });
-  }*/
-
-  //order: string;
-  constructor(private router: ActivatedRoute) { }
+  article: any
+  
+  data=""
+  constructor(private router: ActivatedRoute, private articleService: ArticlesService) {
+   }
 
   ngOnInit() {
-    /*this.router.queryParamMap
-      .subscribe((params) => {
-        //this.article = { ...params.keys, ...params };
-        console.log(params);
-      }
-      );*/
-      console.log(this.router.snapshot.params)
+    
+      //console.log(this.router.snapshot.params.id)
+      this.data=this.router.snapshot.params.id
+      this.articleService.getArticle(this.data).subscribe(result => { 
+        this.article = <Article>result;
+        console.log(this.article)
+      });
   }
 }
