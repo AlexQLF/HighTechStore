@@ -12,6 +12,10 @@ import { StockageModule } from './modules/stockage/stockage.module';
 import { OrdinateursModule } from './modules/ordinateurs/ordinateurs.module';
 import { PhonesModule } from './modules/phones/phones.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -28,9 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
     StockageModule,
     OrdinateursModule,
     PhonesModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [AuthService,AuthentificationGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

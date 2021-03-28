@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-connexion',
@@ -9,14 +11,23 @@ import { Component, OnInit } from '@angular/core';
 export class ConnexionComponent implements OnInit {
 
   messageError : string =""
-  constructor() { }
+  isLoginError : boolean = false;
 
-  Connexion(connexionForm: any){
-    let data = connexionForm.value;
-    console.log(connexionForm.value);
+  constructor(private AuthService: AuthService, private router: Router) { }
+
+
+  ngOnInit(){
+   
   }
 
-  ngOnInit(): void {
+  OnSubmit(email: any,pass: any){
+    this.AuthService.logIn(email,pass).subscribe((data : any)=>{
+      localStorage.setItem('userToken', data.ACCESS_TOKEN);
+      this.router.navigate(['/']);
+    },
+    (err : HttpErrorResponse)=>{
+      this.isLoginError = true;
+    });
   }
 
 }

@@ -16,8 +16,12 @@
     <br/>
 
     <!-- Login Form -->
-    <form #connexionForm="ngForm" (ngSubmit)="Connexion(connexionForm)">
-      <input type="email" id="email" class="fadeIn second" name="email" placeholder="email" #email="ngModel" ngModel email required>
+    <div *ngIf="isLoginError" class="alert alert-danger">
+      Incorrect username or password !
+
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="OnSubmit(email.value,pass.value)">
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" #email="ngModel" ngModel email required>
       <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched" role="alert">
           Email required !
       </div>
@@ -28,13 +32,8 @@
       <div class="alert alert-danger" *ngIf="pass.errors?.minlength && pass.touched" role="alert">
           minlength required is 8 character !
       </div>
-      <input type="submit" class="fadeIn fourth" [disabled]="connexionForm.invalid" value="Log In">
+      <input type="submit" class="fadeIn fourth" [disabled]="!loginForm.valid" value="Log In">
     </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
 
   </div>
 </div>

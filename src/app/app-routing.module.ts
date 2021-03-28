@@ -7,12 +7,12 @@ import { AuthentificationGuardGuard } from './guards/authentification-guard.guar
 
 
 const routes: Routes = [
-  {path: '',component: HomeComponent},
-  {path: 'Ordinateurs', loadChildren: './modules/ordinateurs/ordinateurs.module#OrdinateursModule'},
-  {path: 'Phones', loadChildren: './modules/phones/phones.module#PhonesModule'},
-  {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule'},
+  {path: '',component: HomeComponent, canActivate:[AuthentificationGuardGuard]},
+  {path: 'Ordinateurs', loadChildren: './modules/ordinateurs/ordinateurs.module#OrdinateursModule', canActivate:[AuthentificationGuardGuard]},
+  {path: 'Phones', loadChildren: './modules/phones/phones.module#PhonesModule', canActivate:[AuthentificationGuardGuard]},
+  {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule', canActivate:[AuthentificationGuardGuard]},
   {path: 'Connexion',component: ConnexionComponent},
-  {path: 'HelloWorld',component: HelloWorldComponent},
+  {path: 'HelloWorld',component: HelloWorldComponent, canActivate:[AuthentificationGuardGuard]},
 ];
 
 @NgModule({
