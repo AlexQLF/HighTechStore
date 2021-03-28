@@ -12,6 +12,7 @@ import { StockageModule } from './modules/stockage/stockage.module';
 import { OrdinateursModule } from './modules/ordinateurs/ordinateurs.module';
 import { PhonesModule } from './modules/phones/phones.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ConnexionComponent,
     HelloWorldComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
