@@ -15,5 +15,7 @@ export class ArticlesService {
   getAll(endpoint: string): Observable<Array<Article>>{
     return this.http.get<Array<Article>>(this.url + endpoint);
   }
-
+  getArticle(endpoint: string): Observable<Array<Article>>{
+    return this.http.get<Array<Article>>(this.url + endpoint);
+  }
 }
