@@ -1,8 +1,12 @@
-<div *ngFor="let article of list" class="card" style="width: 18rem;">
+<h6>
+  Détail de l'article :
+</h6>
+
+<div *ngIf="article != null" class="card" style="width: 18rem;">
     <img src="{{article.picture}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"> {{article.libelle}}</h5>
       <p class="card-text">{{article.price}}€</p>
-      <a routerLink="article/{{article.id}}" class="btn btn-primary">Afficher</a>
+      <a [routerLink]="['/articles', article.id]" class="btn btn-primary">Supprimer</a>
     </div>
   </div>

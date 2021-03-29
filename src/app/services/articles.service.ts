@@ -8,12 +8,15 @@ import { Article } from '../interface/Article';
 })
 export class ArticlesService {
 
-  url = 'http://localhost:8080/ArchSI_Td_Angular/rest/shop';
+  url = 'http://localhost:8080/ArchSI_Td_Angular/rest/';
+  //url = 'http://f06c91b21a32.ngrok.io/ArchSI_Td_Angular/rest/';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAll(endpoint: string): Observable<Array<Article>>{
-    return this.http.get<Array<Article>>(this.url + endpoint);
+  getAll(endpoint: string): Observable<Array<Article>> {
+    return this.http.get<Array<Article>>(this.url + "shop" + endpoint);
   }
-
+  getArticle(id: string): Observable<Article> {
+    return this.http.get<Article>(this.url + "articles/" + id);
+  }
 }

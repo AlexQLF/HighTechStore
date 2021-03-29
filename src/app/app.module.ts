@@ -12,6 +12,7 @@ import { StockageModule } from './modules/stockage/stockage.module';
 import { OrdinateursModule } from './modules/ordinateurs/ordinateurs.module';
 import { PhonesModule } from './modules/phones/phones.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleComponent } from './modules/article/article.component';
 import { AuthService } from './services/auth.service';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
 import { FooterComponent } from './footer/footer.component';
@@ -26,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     ConnexionComponent,
     HelloWorldComponent,
     FooterComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
