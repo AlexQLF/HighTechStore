@@ -14,6 +14,7 @@ import { PhonesModule } from './modules/phones/phones.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -24,6 +25,7 @@ import { AuthentificationGuardGuard } from './guards/authentification-guard.guar
     HomeComponent,
     ConnexionComponent,
     HelloWorldComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
