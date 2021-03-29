@@ -21,13 +21,19 @@ export class ConnexionComponent implements OnInit {
   }
 
   OnSubmit(email: any,pass: any){
-    this.AuthService.logIn(email,pass).subscribe((data : any)=>{
-      localStorage.setItem('userToken', data.ACCESS_TOKEN);
-      this.router.navigate(['/']);
+    this.AuthService.logIn(email, pass).subscribe((data : any)=>{
+     if(data)
+     {
+       localStorage.setItem('userToken', data);
+       this.isLoginError = false;
+       this.router.navigate(['/']);
+     }
+     else{
+        this.isLoginError = true;
+      }
     },
     (err : HttpErrorResponse)=>{
       this.isLoginError = true;
     });
   }
-
 }

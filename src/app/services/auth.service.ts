@@ -13,8 +13,7 @@ export class AuthService {
 
    logIn(email: string, pass: string){
      var data = "login="+email+"&mdp="+pass;
-     var reqHeader = new HttpHeaders({'Content-Type':'application/x-www-urlencoded'});
-     return this.http.post(this.rootUrl+'/ArchSI_Td_Angular/rest/admin',data,{headers: reqHeader});
+     return this.http.post(this.rootUrl+'/ArchSI_Td_Angular/rest/admin',data);
    }
 
 }
