@@ -56,7 +56,6 @@
           </li>
         </ul>
         <a class="nav-link"><button *ngIf="isUser" routerLink="Connexion" class="btn btn-outline-success" type="submit">Ajouter un article</button></a>
-        <a class="nav-link"><button *ngIf="isUser" routerLink="Connexion" class="btn btn-outline-success" type="submit">Modifier un article</button></a>
         <a class="nav-link"><button *ngIf="!isUser" routerLink="Connexion" class="btn btn-outline-success" type="submit">Connexion</button></a>
         <a class="nav-link"><button *ngIf="isUser" (click)="seDeconnecter()" class="btn btn-outline-success" type="submit">Déconnexion</button></a>
       </div>
