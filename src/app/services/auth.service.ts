@@ -17,10 +17,13 @@ export class AuthService {
    }
 
    logIn(email: string, pass: string){
+     var reqHeader = new HttpHeaders();
+     
+     reqHeader = reqHeader.append('Content-Type', 'application/json')
+                          .append('login', email)
+                          .append('mdp', pass);
 
-     var data = "login="+email+"&mdp="+pass;
-     return this.http.post(this.rootUrl+'/ArchSI_Td_Angular/rest/admin',data);
-
+     return this.http.post(this.rootUrl+'/ArchSI_Td_Angular/rest/admin', '', { headers : reqHeader});
    }
 
    logOut(){
