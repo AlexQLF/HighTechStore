@@ -7,7 +7,7 @@ import { AuthentificationGuardGuard } from './guards/authentification-guard.guar
 import { ArticleComponent } from './modules/article/article.component';
 
 const routes: Routes = [
-  {path: '',component: HomeComponent, canActivate:[AuthentificationGuardGuard]},
+  {path: 'Home',component: HomeComponent, canActivate:[AuthentificationGuardGuard]},
   {path: 'Ordinateurs', loadChildren: './modules/ordinateurs/ordinateurs.module#OrdinateursModule', canActivate:[AuthentificationGuardGuard]},
   {path: 'Phones', loadChildren: './modules/phones/phones.module#PhonesModule', canActivate:[AuthentificationGuardGuard]},
   {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule', canActivate:[AuthentificationGuardGuard]},

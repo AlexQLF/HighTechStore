@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/"><img width=50px height=50px src="assets/icon.png" id="icon" alt="User Icon" /></a>
-      <a class="navbar-brand" routerLink="/">HighTechStore</a>
+      <a class="navbar-brand" routerLink="Home"><img width=50px height=50px src="assets/icon.png" id="icon" alt="User Icon" /></a>
+      <a class="navbar-brand" routerLink="Home">HighTechStore</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="Home">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,9 +55,9 @@
             </ul>
           </li>
         </ul>
-        <a class="nav-link"><button *ngIf="isUser" routerLink="Connexion" class="btn btn-outline-success" type="submit">Ajouter un article</button></a>
-        <a class="nav-link"><button *ngIf="!isUser" routerLink="Connexion" class="btn btn-outline-success" type="submit">Connexion</button></a>
-        <a class="nav-link"><button *ngIf="isUser" (click)="seDeconnecter()" class="btn btn-outline-success" type="submit">Déconnexion</button></a>
+        <a class="nav-link"><button *ngIf="(loginStatus | async)" routerLink="Connexion" class="btn btn-outline-success" type="submit">Ajouter un article</button></a>
+        <a class="nav-link"><button *ngIf="!(loginStatus | async)" routerLink="Connexion" class="btn btn-outline-success" type="submit">Connexion</button></a>
+        <a class="nav-link"><button *ngIf="(loginStatus | async)" (click)="seDeconnecter()" class="btn btn-outline-success" type="submit">Déconnexion</button></a>
       </div>
     </div>
   </nav>
