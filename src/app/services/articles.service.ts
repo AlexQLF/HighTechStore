@@ -19,4 +19,10 @@ export class ArticlesService {
   getArticle(id: string): Observable<Article> {
     return this.http.get<Article>(this.url + "articles/" + id);
   }
+
+  deleteArticle(id: string){
+    return this.http.delete(this.url+ "articles/"+id).subscribe(data => {
+      console.log(data);
+    });
+  }
 }
