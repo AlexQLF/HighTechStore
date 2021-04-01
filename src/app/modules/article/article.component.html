@@ -1,16 +1,23 @@
-<h6>
-  Détail de l'article :
-</h6>
-
-<div *ngIf="article != null" class="card" style="width: 18rem;">
-  <img src="{{article.picture}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> {{article.libelle}}</h5>
-    <p class="card-text">{{article.price}}€</p>
-    <a *ngIf="(loginStatus | async)" [routerLink]="['/UpdateArticle', article.id]" class="btn btn-warning">Modifier</a>
-    <button *ngIf="(loginStatus | async)" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-      Supprimer
-    </button>
+<div class="container justify-content-center p-4 pb-4">
+  <div class="row">
+    <div class="col-md-5 my-auto text-end">
+      <h1>
+        Détail de l'article :
+      </h1>
+    </div>
+    <div class="col-md-7">
+      <div *ngIf="article != null" class="card" style="width: 18rem;">
+        <img src="{{article.picture}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> {{article.libelle}}</h5>
+          <p class="card-text">{{article.price}}€</p>
+          <a *ngIf="(loginStatus | async)" [routerLink]="['/UpdateArticle', article.id]" class="btn btn-warning">Modifier</a>&nbsp;
+          <button *ngIf="(loginStatus | async)" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
