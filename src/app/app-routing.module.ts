@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule'},
   {path: 'Connexion',component: ConnexionComponent, canActivate:[NoauthentificationGuardGuard]},
   {path: 'CreateArticle', component: CreateArticleComponent,  canActivate:[AuthentificationGuardGuard]},
-  {path: 'UpdateArticle/:id', component: UpdateArticleComponent},
+  {path: 'UpdateArticle/:id', component: UpdateArticleComponent, canActivate:[AuthentificationGuardGuard]},
   {path: 'articles/:id',component: ArticleComponent},
 ];
 
