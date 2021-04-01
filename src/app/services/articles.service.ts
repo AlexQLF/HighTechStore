@@ -22,7 +22,6 @@ export class ArticlesService {
 
   deleteArticle(id: string){
     return this.http.delete(this.url+ "articles/"+id).subscribe(data => {
-      console.log(data);
     });
   }
 

@@ -13,10 +13,8 @@ export class AuthentificationGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  boolean  {
     if(this.authService.getLoggesIn()){
-      console.log(this.authService.getLoggesIn());
       return true;
     }else{
-      console.log(this.authService.getLoggesIn());
       this.route1.navigate(['/Connexion']);
       return true;
     }

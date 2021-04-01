@@ -13,14 +13,16 @@ export class FooterComponent implements OnInit {
   contact : any;
   data="";
 
-  constructor(private router: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private http: HttpClient) { 
+    this.footer = <any>{};
+    this.contact = <any>{};
+  }
 
   ngOnInit(): void {
     this.data=this.router.snapshot.params.id
     this.http.get<Array<String>>("http://localhost:8080/ArchSI_Td_Angular/rest/shop/infos").subscribe(result => { 
         this.footer = <Array<String>>result;
         this.contact = <String>this.footer[2].split(" - ");
-        console.log(this.footer)
       });
   }
 

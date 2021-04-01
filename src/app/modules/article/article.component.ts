@@ -28,7 +28,6 @@ export class ArticleComponent implements OnInit {
       this.data=this.router.snapshot.params.id
       this.articleService.getArticle(this.data).subscribe(result => { 
         this.article = <Article>result;
-        console.log(this.article)
       });
   }
 

@@ -52,12 +52,11 @@ export class UpdateArticleComponent implements OnInit {
     //console.log(id);
 
     this.articleService.updateArticle(data, id).subscribe(data => {
-      console.log(data);
+
       this.article = <Article>data;
 
-
       const map = new Map();
-      map.set("stockage >disque-dur", "Stockage/disque-dur");
+      map.set("stockage > disque-dur", "Stockage/disque-dur");
       map.set("stockage > cle-usb", "Stockage/cle-usb");
       map.set("stockage > accessoires-stockage", "Stockage/stockage-accessoires");
       map.set("telephonie > tel-fixe", "Phones/telFixe");
@@ -67,10 +66,7 @@ export class UpdateArticleComponent implements OnInit {
       map.set("ordinateur > pc-portable", "Ordinateurs/PcPortable");
       map.set("ordinateur > accessoires-ordinateur", "Ordinateurs/PcAccessoires");
 
-      console.log(this.article.category);
-
       this.router1.navigate(["/" + map.get(this.article.category)]);
-
 
     });
 

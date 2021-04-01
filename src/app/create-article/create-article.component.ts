@@ -26,7 +26,6 @@ export class CreateArticleComponent implements OnInit {
      
      reqHeader = reqHeader.append('Content-Type', 'application/json');
     this.http.get('http://localhost:8080/ArchSI_Td_Angular/rest/shop/categories', {headers : reqHeader}).subscribe(result => {
-      console.log(result);
       this.Categories = result;
     });
     
@@ -38,12 +37,8 @@ export class CreateArticleComponent implements OnInit {
     
     
     var article = this.ArticlesService.addArticle(data).subscribe(result => {
-      console.log(result);
 
       var tmp = result as Article;
-
-      console.log(tmp.category);
-
 
       const map = new Map();
       map.set("stockage > disque-dur", "Stockage/disque-dur");

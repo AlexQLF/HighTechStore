@@ -17,9 +17,6 @@ export class AuthService {
     if(localStorage.getItem('userToken')){
       this.loginStatus.next(true);
     }
-    this.loginStatus.asObservable().subscribe(result => {
-      console.log(result);
-    })
    }
 
    logIn(email: string, pass: string){

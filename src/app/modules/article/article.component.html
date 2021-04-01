@@ -10,6 +10,7 @@
         <img src="{{article.picture}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"> {{article.libelle}}</h5>
+          <h6 class="card-text"> {{article.brand}}</h6>
           <p class="card-text">{{article.price}}€</p>
           <a *ngIf="(loginStatus | async)" [routerLink]="['/UpdateArticle', article.id]" class="btn btn-warning">Modifier</a>&nbsp;
           <button *ngIf="(loginStatus | async)" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
@@ -33,7 +34,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-danger" (click)="deleteArticle(article.id)" onclick="document.getElementsByClassName('modal-backdrop show')[0].remove()">Delete</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteArticle(article.id)">Delete</button>
       </div>
     </div>
   </div>
