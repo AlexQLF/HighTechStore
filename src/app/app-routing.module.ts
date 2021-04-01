@@ -5,6 +5,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
 import { ArticleComponent } from './modules/article/article.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
 import { NoauthentificationGuardGuard } from './guards/noauthentification-guard.guard';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule'},
   {path: 'Connexion',component: ConnexionComponent, canActivate:[NoauthentificationGuardGuard]},
   {path: 'CreateArticle', component: CreateArticleComponent,  canActivate:[AuthentificationGuardGuard]},
+  {path: 'UpdateArticle/:id', component: UpdateArticleComponent},
   {path: 'articles/:id',component: ArticleComponent},
 ];
 

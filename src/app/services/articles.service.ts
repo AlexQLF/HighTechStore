@@ -33,4 +33,13 @@ export class ArticlesService {
     reqHeader = reqHeader.append('Content-Type', 'application/json');
     return this.http.post(this.url + "articles", data, {headers : reqHeader});
   }
+
+  updateArticle(data : any, id : any)
+  {
+    var reqHeader = new HttpHeaders();
+
+    reqHeader = reqHeader.append('Content-Type', 'application/json');
+
+    return this.http.put(this.url + "articles/" + id, data);
+  }
 }

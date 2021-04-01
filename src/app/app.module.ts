@@ -17,6 +17,7 @@ import { AuthentificationGuardGuard } from './guards/authentification-guard.guar
 import { FooterComponent } from './footer/footer.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
 import { NoauthentificationGuardGuard } from './guards/noauthentification-guard.guard';
+import { UpdateArticleComponent } from './update-article/update-article.component';
 
 
 
@@ -29,6 +30,7 @@ import { NoauthentificationGuardGuard } from './guards/noauthentification-guard.
     FooterComponent,
     ArticleComponent,
     CreateArticleComponent,
+    UpdateArticleComponent,
   ],
   imports: [
     BrowserModule,
