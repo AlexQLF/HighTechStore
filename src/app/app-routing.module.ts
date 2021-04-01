@@ -6,6 +6,7 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
 import { ArticleComponent } from './modules/article/article.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
 
 const routes: Routes = [
   {path: 'Home',component: HomeComponent, canActivate:[AuthentificationGuardGuard]},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule', canActivate:[AuthentificationGuardGuard]},
   {path: 'Connexion',component: ConnexionComponent},
   {path: 'CreateArticle', component: CreateArticleComponent},
+  {path: 'UpdateArticle/:id', component: UpdateArticleComponent},
   {path: 'articles/:id',component: ArticleComponent},
   {path: 'HelloWorld',component: HelloWorldComponent},
   {path: 'HelloWorld',component: HelloWorldComponent, canActivate:[AuthentificationGuardGuard]},

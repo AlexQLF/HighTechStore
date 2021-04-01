@@ -17,6 +17,7 @@ import { AuthService } from './services/auth.service';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
 import { FooterComponent } from './footer/footer.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
 
 
 
@@ -30,6 +31,7 @@ import { CreateArticleComponent } from './create-article/create-article.componen
     FooterComponent,
     ArticleComponent,
     CreateArticleComponent,
+    UpdateArticleComponent,
   ],
   imports: [
     BrowserModule,
