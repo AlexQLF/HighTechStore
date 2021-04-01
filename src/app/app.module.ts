@@ -16,6 +16,7 @@ import { ArticleComponent } from './modules/article/article.component';
 import { AuthService } from './services/auth.service';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
 import { FooterComponent } from './footer/footer.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
 
 
 
@@ -28,6 +29,7 @@ import { FooterComponent } from './footer/footer.component';
     HelloWorldComponent,
     FooterComponent,
     ArticleComponent,
+    CreateArticleComponent,
   ],
   imports: [
     BrowserModule,
