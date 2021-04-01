@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Article } from 'src/app/interface/Article';
 import { ArticlesService } from 'src/app/services/articles.service';
 import {Location} from '@angular/common';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-article',
@@ -12,10 +13,14 @@ import {Location} from '@angular/common';
 })
 export class ArticleComponent implements OnInit {
 
-  article: any
+  article: any;
+
+  loginStatus : Observable<boolean>;
   
   data=""
-  constructor(private router: ActivatedRoute, private articleService: ArticlesService, private _location: Location) {
+  
+  constructor(private router: ActivatedRoute, private articleService: ArticlesService, private _location: Location, private auth: AuthService) {
+    this.loginStatus = auth.isLoggesIn();
    }
 
   ngOnInit() {

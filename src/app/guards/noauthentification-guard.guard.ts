@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthentificationGuardGuard implements CanActivate {
+export class NoauthentificationGuardGuard implements CanActivate {
 
   constructor(private route1 : Router, private authService: AuthService) {}
 
@@ -13,12 +13,13 @@ export class AuthentificationGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  boolean  {
     if(this.authService.getLoggesIn()){
-      console.log(this.authService.getLoggesIn());
+      this.route1.navigate(['/Home']);
       return true;
     }else{
-      console.log(this.authService.getLoggesIn());
-      this.route1.navigate(['/Connexion']);
       return true;
     }
   }
 }
+
+  
+

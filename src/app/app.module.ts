@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { StockageModule } from './modules/stockage/stockage.module';
 import { OrdinateursModule } from './modules/ordinateurs/ordinateurs.module';
 import { PhonesModule } from './modules/phones/phones.module';
@@ -17,6 +16,7 @@ import { AuthService } from './services/auth.service';
 import { AuthentificationGuardGuard } from './guards/authentification-guard.guard';
 import { FooterComponent } from './footer/footer.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { NoauthentificationGuardGuard } from './guards/noauthentification-guard.guard';
 
 
 
@@ -26,7 +26,6 @@ import { CreateArticleComponent } from './create-article/create-article.componen
     NavbarComponent,
     HomeComponent,
     ConnexionComponent,
-    HelloWorldComponent,
     FooterComponent,
     ArticleComponent,
     CreateArticleComponent,
@@ -41,7 +40,7 @@ import { CreateArticleComponent } from './create-article/create-article.componen
     HttpClientModule,
     
   ],
-  providers: [AuthService,AuthentificationGuardGuard],
+  providers: [AuthService,AuthentificationGuardGuard, NoauthentificationGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

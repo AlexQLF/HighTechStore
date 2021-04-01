@@ -14,6 +14,12 @@ export class AuthService {
 
 
   constructor(private http: HttpClient, private router : Router) {
+    if(localStorage.getItem('userToken')){
+      this.loginStatus.next(true);
+    }
+    this.loginStatus.asObservable().subscribe(result => {
+      console.log(result);
+    })
    }
 
    logIn(email: string, pass: string){
@@ -44,6 +50,10 @@ export class AuthService {
 
    isLoggesIn(){
      return this.loginStatus.asObservable();
+   }
+
+   getLoggesIn(){
+     return this.loginStatus.getValue();
    }
 
   

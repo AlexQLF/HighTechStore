@@ -1,0 +1,16 @@
+footer .f1 strong{
+    position: relative;
+    margin-bottom: 27px;
+    display: block;
+    color: #fff;
+}
+
+footer .f1 strong:after {
+    height: 2px;
+    background: #fff;
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    width: 60%;
+    left: 20%;
+}
