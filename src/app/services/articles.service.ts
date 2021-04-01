@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Article } from '../interface/Article';
 
@@ -24,5 +24,13 @@ export class ArticlesService {
     return this.http.delete(this.url+ "articles/"+id).subscribe(data => {
       console.log(data);
     });
+  }
+
+  addArticle(data : any)
+  {
+    var reqHeader = new HttpHeaders();
+
+    reqHeader = reqHeader.append('Content-Type', 'application/json');
+    return this.http.post(this.url + "articles", data, {headers : reqHeader});
   }
 }

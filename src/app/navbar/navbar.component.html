@@ -55,7 +55,7 @@
             </ul>
           </li>
         </ul>
-        <a class="nav-link"><button *ngIf="(loginStatus | async)" routerLink="Connexion" class="btn btn-outline-success" type="submit">Ajouter un article</button></a>
+        <a class="nav-link"><button *ngIf="(loginStatus | async)" routerLink="CreateArticle" class="btn btn-outline-success" type="submit">Ajouter un article</button></a>
         <a class="nav-link"><button *ngIf="!(loginStatus | async)" routerLink="Connexion" class="btn btn-outline-success" type="submit">Connexion</button></a>
         <a class="nav-link"><button *ngIf="(loginStatus | async)" (click)="seDeconnecter()" class="btn btn-outline-success" type="submit">Déconnexion</button></a>
       </div>
