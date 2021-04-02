@@ -13,7 +13,7 @@ export class NoauthentificationGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  boolean  {
     if(this.authService.getLoggesIn()){
-      this.route1.navigate(['/Home']);
+      this.route1.navigate(['/']);
       return true;
     }else{
       return true;

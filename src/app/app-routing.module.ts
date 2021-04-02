@@ -9,7 +9,7 @@ import { UpdateArticleComponent } from './update-article/update-article.componen
 import { NoauthentificationGuardGuard } from './guards/noauthentification-guard.guard';
 
 const routes: Routes = [
-  {path: 'Home',component: HomeComponent},
+  {path: '',component: HomeComponent},
   {path: 'Ordinateurs', loadChildren: './modules/ordinateurs/ordinateurs.module#OrdinateursModule'},
   {path: 'Phones', loadChildren: './modules/phones/phones.module#PhonesModule'},
   {path: 'Stockage', loadChildren: './modules/stockage/stockage.module#StockageModule'},

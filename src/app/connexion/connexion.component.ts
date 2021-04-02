@@ -27,7 +27,7 @@ export class ConnexionComponent implements OnInit {
        localStorage.setItem('userToken', data);
        this.AuthService.SetloginStatus();
        this.isLoginError = false;
-       this.router.navigate(['/Home']);
+       this.router.navigate(['']);
      }
      else{
         this.isLoginError = true;

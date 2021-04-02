@@ -1,37 +1,40 @@
-<h6>Update Article </h6>
-
-<div class="d-flex p-2">
-    <form #articlePost="ngForm" (ngSubmit)="onSubmit(articlePost.value)">
-        <div class="form-group">
-          <label for="libelle">Nom</label>
-          <input type="text" class="form-control" id="libelle" name="libelle" ngModel placeholder="Nom" value="{{article.libelle}}" required>
-        </div>
-        <div class="form-group">
-            <label for="Brand">Marque</label>
-            <input type="text" class="form-control" id="brand" name="brand" ngModel placeholder="Marque" value="{{article.brand}}" required>
-        </div>
-        <div class="form-group">
-          <label for="price">Prix</label>
-          <input type="text" class="form-control" id="price" name="price" ngModel placeholder="Prix" value="{{article.price}}" required>
-        </div>
-        <div class="form-group">
-            <label for="category">Catégorie</label>
-            <select class="form-select" name="category" id="category" ngModel required>
-                <option *ngFor="let cat of Categories" value="{{cat.split('> ')[1]}}" [selected]="cat == article.category">{{cat}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="picture">Image</label>
-            <input type="text" class="form-control" id="picture" name="picture" value="{{article.picture}}" ngModel placeholder="Image" required>
-        </div>
-        
-        <br>
-
-        <div class="form-group row">
-            <div class="col-sm-10">
-              <button type="submit" class="btn btn-primary">Mettre à jour</button>
-            </div>
+<div class="container d-flex justify-content-center p-4 pb-4">
+  <div class="row">
+    <h6>Update Article </h6>
+    <div class="d-flex p-2">
+      <form #articlePost="ngForm" (ngSubmit)="onSubmit(articlePost.value)">
+          <div class="form-group">
+            <label for="libelle">Nom</label>
+            <input type="text" class="form-control" id="libelle" name="libelle" ngModel placeholder="Nom" value="{{article.libelle}}" required>
           </div>
+          <div class="form-group">
+              <label for="Brand">Marque</label>
+              <input type="text" class="form-control" id="brand" name="brand" ngModel placeholder="Marque" value="{{article.brand}}" required>
+          </div>
+          <div class="form-group">
+            <label for="price">Prix</label>
+            <input type="text" class="form-control" id="price" name="price" ngModel placeholder="Prix" value="{{article.price}}" required>
+          </div>
+          <div class="form-group">
+              <label for="category">Catégorie</label>
+              <select class="form-select" name="category" id="category" ngModel required>
+                  <option *ngFor="let cat of Categories" value="{{cat.split('> ')[1]}}" [selected]="cat == article.category">{{cat}}</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="picture">Image</label>
+              <input type="text" class="form-control" id="picture" name="picture" value="{{article.picture}}" ngModel placeholder="Image" required>
+          </div>
+          
+          <br>
 
-    </form>
+          <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Mettre à jour</button>
+              </div>
+            </div>
+
+      </form>
+    </div>
+  </div>
 </div>
